@@ -1,7 +1,7 @@
 import typer
 
 from ..commands.switch_user import switch_user_prompt, switch_user_prompt_temporary
-from ..lib import shell
+from ..utils import shell
 from ..utils.io import init_config
 from . import alias, user
 
