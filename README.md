@@ -1,6 +1,9 @@
 # Parallel (paral)
 An Git User/Credential Switcher
 
+## Demo
+[![asciicast](https://asciinema.org/a/729390.svg)](https://asciinema.org/a/729390)
+
 ## Install
 ```shell
 pipx install paral
