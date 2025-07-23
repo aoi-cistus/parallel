@@ -28,6 +28,7 @@ def delete_alias_prompt(config):
             ).unsafe_ask()
 
         if confirm:
+            config["users"] = [user for user in config["users"] if user.get("linkTo") != selected_alias["id"]]
             config["aliases"].remove(selected_alias)
             config = save(config)
             print(f"Alias {selected_alias['username']} has been removed.")

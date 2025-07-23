@@ -14,6 +14,7 @@ def add_user_prompt(config):
     link_alias = questionary.confirm(
         "Link to an existing alias?", default=False
     ).unsafe_ask()
+    link_to = None
     if not link_alias:
         while True:
             username = questionary.text("Enter Git username").unsafe_ask()
@@ -50,7 +51,6 @@ def add_user_prompt(config):
                     break
                 else:
                     print("Enter a value.")
-            link_to = None
 
     confirm = questionary.confirm(
         "Would you like to add with this information?", default=False

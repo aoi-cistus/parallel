@@ -1,5 +1,6 @@
 import subprocess
 import os
+import uuid
 
 import questionary
 
@@ -65,6 +66,8 @@ def switch_user_prompt(config, local: bool):
     if select_user != "Exit":
         selected_index = users.index(select_user)
         selected_user = config["users"][selected_index]
+        if selected_user.get("id") is None:
+            selected_user["id"] = str(uuid.uuid4())
         subprocess.run(f"git config {"--global" if not local else "--local"} credential.namespace {selected_user["id"]}")
         if selected_user.get("linkTo"):
             linked_user = next((alias for alias in config["aliases"] if alias.get('id') == selected_user['linkTo']), None)
