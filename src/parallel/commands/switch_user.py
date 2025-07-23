@@ -4,7 +4,7 @@ import uuid
 
 import questionary
 
-from ..lib.io import save
+from ..utils.io import save
 
 def switch_user_prompt_temporary(config) -> dict:
     users = []

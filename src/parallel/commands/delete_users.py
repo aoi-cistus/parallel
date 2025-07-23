@@ -1,6 +1,6 @@
 import questionary
 
-from ..lib.io import save
+from ..utils.io import save
 
 
 def delete_user_prompt(config):

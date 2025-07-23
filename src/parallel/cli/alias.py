@@ -2,7 +2,7 @@ import typer
 
 
 from ..commands import add_alias_prompt, delete_alias_prompt
-from ..lib.io import init_config
+from ..utils.io import init_config
 
 app = typer.Typer(name="alias")
 

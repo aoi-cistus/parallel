@@ -4,7 +4,7 @@ import warnings
 import questionary
 
 from .commands import switch_user_prompt, add_user_prompt, add_alias_prompt, delete_user_prompt, delete_alias_prompt
-from .lib.io import init_config
+from .utils.io import init_config
 
 
 parser = argparse.ArgumentParser(description="Example script.")

@@ -2,7 +2,7 @@ import typer
 
 
 from ..commands import add_user_prompt, delete_user_prompt, switch_user_prompt
-from ..lib.io import init_config
+from ..utils.io import init_config
 
 app = typer.Typer(name="user")
 

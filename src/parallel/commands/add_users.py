@@ -1,7 +1,7 @@
 import questionary
 
-from ..lib.user import check_user_exists, add_user
-from ..lib.io import save
+from ..utils.user import check_user_exists, add_user
+from ..utils.io import save
 
 def add_user_prompt(config):
     while True:

@@ -1,5 +1,5 @@
 import questionary
-from ..lib.io import save
+from ..utils.io import save
 
 def delete_alias_prompt(config):
     aliases = [f"{user['username']} ({user['email']})" for user in config["aliases"]]

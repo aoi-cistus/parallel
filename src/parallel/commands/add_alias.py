@@ -1,7 +1,7 @@
 import questionary
 
-from ..lib.io import save
-from ..lib.alias import add_alias
+from ..utils.io import save
+from ..utils.alias import add_alias
 
 
 def add_alias_prompt(config) -> dict:

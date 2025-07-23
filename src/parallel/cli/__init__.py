@@ -2,7 +2,7 @@ import typer
 
 from ..commands.switch_user import switch_user_prompt, switch_user_prompt_temporary
 from ..lib import shell
-from ..lib.io import init_config
+from ..utils.io import init_config
 from . import alias, user
 
 app = typer.Typer(no_args_is_help=True, short_help="An Git User/Credential Switcher")
