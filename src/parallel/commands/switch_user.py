@@ -48,7 +48,7 @@ def switch_user_prompt_temporary(config) -> dict:
 def switch_user_prompt(config, local: bool):
     users = []
 
-    for user in config["users"]:
+    for user in config["users"]:, shell=True
         if 'username' in user and 'email' in user:
             users.append(f"{user['username']} ({user['email']}) | {user['url']} {"(current)" if user["current"] else ""}")
         elif 'linkTo' in user:
@@ -68,7 +68,7 @@ def switch_user_prompt(config, local: bool):
         selected_user = config["users"][selected_index]
         if selected_user.get("id") is None:
             selected_user["id"] = str(uuid.uuid4())
-        subprocess.run(f"git config {"--global" if not local else "--local"} credential.namespace {selected_user["id"]}")
+        subprocess.run(f"git config {"--global" if not local else "--local"} credential.namespace {selected_user["id"]}", shell=True)
         if selected_user.get("linkTo"):
             linked_user = next((alias for alias in config["aliases"] if alias.get('id') == selected_user['linkTo']), None)
             subprocess.run(f'git config {"--global" if not local else "--local"} user.name "{linked_user["username"]}"', shell=True)
